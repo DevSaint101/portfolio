@@ -1,0 +1,12 @@
+# Robots.txt for Devsaint Portfolio
+# https://devsaint.dev
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://devsaint.dev/sitemap.xml
+
+# Crawl-delay (optional, some bots respect this)
+Crawl-delay: 1
+

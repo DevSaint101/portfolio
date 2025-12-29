@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Andrew Kokro
+N:Kokro;Andrew;;;
+TITLE:Software Developer
+ORG:Devsaint
+EMAIL;TYPE=INTERNET:andrewkokro10@email.com
+TEL;TYPE=CELL:
+URL:https://github.com/devsaint
+END:VCARD
