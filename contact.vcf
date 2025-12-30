@@ -1,10 +1,13 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:Andrew Kokro
+FN:Andrew Kokro (DevSaint101)
 N:Kokro;Andrew;;;
-TITLE:Software Developer
-ORG:Devsaint
-EMAIL;TYPE=INTERNET:andrewkokro10@email.com
-TEL;TYPE=CELL:
-URL:https://github.com/devsaint
+NICKNAME:DevSaint101
+TITLE:Software Developer | Mobile App Developer | Cybersecurity Analyst
+ORG:DevSaint101
+EMAIL;TYPE=INTERNET:andrewkokro10@gmail.com
+URL;TYPE=GitHub:https://github.com/DevSaint101
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/andrew-kokro-7a099128a
+URL;TYPE=Twitter:https://x.com/DevSaint0x
+NOTE:Expert in full-stack development, mobile applications, and blue team cybersecurity operations. Specializing in digital forensics and threat analysis.
 END:VCARD

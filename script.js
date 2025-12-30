@@ -109,7 +109,7 @@ const ThemeManager = {
         if (theme === 'dark') {
             this.moonIcon.classList.add('hidden');
             this.sunIcon.classList.remove('hidden');
-        } else {
+    } else {
             this.moonIcon.classList.remove('hidden');
             this.sunIcon.classList.add('hidden');
         }
@@ -177,20 +177,20 @@ const Navigation = {
     },
     
     setupSectionObserver() {
-        const observerOptions = {
+const observerOptions = {
             root: null,
             rootMargin: '-20% 0px -70% 0px',
             threshold: 0
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
                     this.setActiveSection(entry.target.id);
-                }
-            });
-        }, observerOptions);
-        
+        }
+    });
+}, observerOptions);
+
         this.sections.forEach(section => {
             observer.observe(section);
         });
@@ -258,15 +258,15 @@ const Navigation = {
                     e.preventDefault();
                     this.smoothScrollTo(href);
                 }
-            });
-        });
-        
+    });
+});
+
         // Scroll effects
         window.addEventListener('scroll', () => this.handleScroll(), { passive: true });
         
         // Escape key closes menu
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
                 this.closeMobileMenu();
             }
         });
@@ -370,29 +370,29 @@ const SkillsAnimation = {
 const HeroTerminal = {
     commands: {
         about: () => {
-            window.location.href = 'about.html';
-            return 'Navigating to About page...';
-        },
+        window.location.href = 'about.html';
+        return 'Navigating to About page...';
+    },
         skills: () => {
-            window.location.href = 'skills.html';
-            return 'Navigating to Skills page...';
-        },
+        window.location.href = 'skills.html';
+        return 'Navigating to Skills page...';
+    },
         projects: () => {
-            window.location.href = 'projects.html';
-            return 'Navigating to Projects page...';
-        },
+        window.location.href = 'projects.html';
+        return 'Navigating to Projects page...';
+    },
         contact: () => {
-            window.location.href = 'contact.html';
-            return 'Navigating to Contact page...';
-        },
+        window.location.href = 'contact.html';
+        return 'Navigating to Contact page...';
+    },
         home: () => {
-            window.location.href = 'index.html';
-            return 'Navigating to Home page...';
-        },
+        window.location.href = 'index.html';
+        return 'Navigating to Home page...';
+    },
         clear: function() {
             HeroTerminal.clearTerminal();
-            return '';
-        },
+        return '';
+    },
         help: () => `Available commands:
   about    - Go to About page
   skills   - Go to Skills page
@@ -445,28 +445,28 @@ Specializing in full-stack development, mobile applications, and blue team cyber
     
     processCommand(input) {
         const parts = input.trim().split(/\s+/);
-        const command = parts[0].toLowerCase();
-        const args = parts.slice(1);
-        
+    const command = parts[0].toLowerCase();
+    const args = parts.slice(1);
+    
         // Add command to display
         this.addCommandLine(input);
-        
-        // Process command
+    
+    // Process command
         if (this.commands[command]) {
             const result = this.commands[command](args);
-            if (result) {
+        if (result) {
                 this.addOutput(result);
-            }
-        } else {
-            this.addOutput(`Command not found: ${command}. Type 'help' for available commands.`);
         }
+    } else {
+            this.addOutput(`Command not found: ${command}. Type 'help' for available commands.`);
+    }
     },
-    
+
     addCommandLine(command) {
-        const line = document.createElement('div');
-        line.className = 'code-line';
-        line.innerHTML = `
-            <span class="prompt">$</span>
+    const line = document.createElement('div');
+    line.className = 'code-line';
+    line.innerHTML = `
+        <span class="prompt">$</span>
             <span class="command">${this.escapeHtml(command)}</span>
         `;
         this.history.appendChild(line);
@@ -476,15 +476,15 @@ Specializing in full-stack development, mobile applications, and blue team cyber
     addOutput(text) {
         if (!text) return;
         
-        const lines = text.split('\n');
+    const lines = text.split('\n');
         const useTyping = !prefersReducedMotion();
-        
-        lines.forEach((line, lineIndex) => {
-            const outputLine = document.createElement('div');
-            outputLine.className = 'code-line';
-            const outputSpan = document.createElement('span');
-            outputSpan.className = 'output';
-            outputLine.appendChild(outputSpan);
+    
+    lines.forEach((line, lineIndex) => {
+        const outputLine = document.createElement('div');
+        outputLine.className = 'code-line';
+        const outputSpan = document.createElement('span');
+        outputSpan.className = 'output';
+        outputLine.appendChild(outputSpan);
             this.history.appendChild(outputLine);
             
             if (useTyping && line.length > 0) {
@@ -498,14 +498,14 @@ Specializing in full-stack development, mobile applications, and blue team cyber
     },
     
     typeText(element, text, delay = 0) {
-        let i = 0;
+            let i = 0;
         const speed = CONFIG.terminal.typingSpeed;
         
         const type = () => {
             if (i < text.length) {
                 element.textContent += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
+                    i++;
+                    setTimeout(type, speed);
             } else {
                 this.scrollToBottom();
             }
